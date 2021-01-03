@@ -1,6 +1,6 @@
 <script src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'></script>
 
-<script>
+<!-- <script>
     window.onload = function() {
         AFRAME.registerComponent('videohandler', {
             init: function () {
@@ -19,7 +19,7 @@
             }
         });
     };
-</script>
+</script> -->
 
 <style>
   .arjs-loader {
@@ -44,6 +44,7 @@
 
 <!-- rawgithack development URL -->
 <script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
+<script src='js/aframe-gif-shader.min.js'></script>
 
 <body style='margin : 0px; overflow: hidden;'>
    <!-- minimal loader shown until image descriptors are loaded -->
@@ -86,7 +87,7 @@
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
         
         <a-assets>
-            <img id="icon_4b_128" src="awaodoritest.gif">
+            <img id="test" src="gif/banana.gif">
         </a-assets>
 
         <a-nft
@@ -110,7 +111,17 @@
                 >
             </a-entity> -->
 
-            <a-image id="icon_4b_128" src="#icon_4b_128" position="0 0 0" rotation="-90 0 0" scale="30 30 30">
+            <!-- <a-image id="icon_4b_128" src="#test" position="0 0 0" rotation="-90 0 0" scale="30 30 30"> -->
+
+            <a-entity
+              geometry="primitive: plane;"
+              material="shader:gif; src:#test;
+              color:white;
+              opacity:1"
+              rotation="-90 0 0"
+              scale="30 30 30"
+              >
+            </a-entity>
         </a-nft>
 
 		<a-entity camera></a-entity>
